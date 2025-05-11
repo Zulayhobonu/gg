@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:yelloow/bir.dart';
 
 void main() {
-  runApp(MaterialApp(home: asos()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false,
+    home: asos()));
 }
 
 class asos extends StatefulWidget {
