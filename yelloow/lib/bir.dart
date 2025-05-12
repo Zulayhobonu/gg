@@ -39,15 +39,15 @@ class _birState extends State<bir> {
       padding: EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.red,
+          color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(50)),
         ),
-        height: 200,
+        height: 270,
         width: 250,
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
+              padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -55,14 +55,42 @@ class _birState extends State<bir> {
                 children: [
                   Icon(Icons.favorite, color: Colors.white),
                   Text("Camecal Free", style: TextStyle(fontSize: 20)),
-                  Icon(Icons.shopping_bag, color: Colors.white),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    width: 40,
+                    height: 40,
+                    child: Icon(Icons.shopping_bag, color: Colors.white),
+                  ),
                 ],
               ),
             ),
             Container(
-              width: 100,
-              height: 100,
-              child: Image(image: NetworkImage(nom[qayt].rasmi)),
+              width: 70,
+              height: 70,
+              child: Image(
+                image: NetworkImage(nom[qayt].rasmi),
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: 5),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5, right: 5),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text(nom[qayt].nomi), Text(nom[qayt].narxi)],
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 187, 186, 186),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+              ),
+              width: 200,
+              height: 50,
             ),
           ],
         ),
@@ -106,14 +134,54 @@ class _birState extends State<bir> {
         ),
       ),
       body: Expanded(
-        child: Container(
-          width: double.infinity,
-          height: 200,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: nom.length,
-            itemBuilder: (context, index) => temp(index),
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 200,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: nom.length,
+                itemBuilder: (context, index) => temp(index),
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                "Check out",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                "Special Grocery Offers",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+            ),
+            SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Container(child: Text("Vegetable"),
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                ),
+                width: 200,
+                height: 50,
+              ),
+            ),
+          ],
         ),
       ),
     );
