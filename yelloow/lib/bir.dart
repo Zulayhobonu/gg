@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class bir extends StatefulWidget {
@@ -172,13 +174,82 @@ class _birState extends State<bir> {
             SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 20),
-              child: Container(child: Text("Vegetable"),
+              child: Container(
+                child: Center(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Text(
+                          "Vegetable",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 50),
+                        child: Icon(Icons.arrow_downward),
+                      ),
+                    ],
+                  ),
+                ),
                 decoration: BoxDecoration(
                   border: Border.all(),
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                 ),
                 width: 200,
                 height: 50,
+              ),
+            ),
+            SizedBox(height: 20),
+            Center(
+              child: Stack(
+                children: [
+                  Positioned(
+                    child: Container(
+                      // decoration: BoxDecoration(border: Border.all(),borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.skew(0.1, 0.1),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 222, 122, 240),
+                            borderRadius: BorderRadius.all(Radius.circular(50)),
+                          ),
+                          width: 400,
+                          height: 200,
+                        ),
+                      ),
+                      width: 400,
+                      height: 200,
+                    ),
+                  ),
+                  Positioned(top: 10,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                      ),
+                      width: 400,
+                      height: 200,
+                    ),
+                  ),
+                  Positioned(top: 25,
+                    child: Container(child: Text("Get Special Discount"),
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                      ),
+                      width: 400,
+                      height: 250,
+                    ),
+                  )
+                ],
               ),
             ),
           ],
