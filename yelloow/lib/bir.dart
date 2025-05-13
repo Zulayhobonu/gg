@@ -55,7 +55,15 @@ class _birState extends State<bir> {
 
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(Icons.favorite, color: Colors.white),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    width: 40,
+                    height: 40,
+                    child: Icon(Icons.favorite, color: Colors.white),
+                  ),
                   Text("Camecal Free", style: TextStyle(fontSize: 20)),
                   Container(
                     decoration: BoxDecoration(
@@ -229,7 +237,8 @@ class _birState extends State<bir> {
                       height: 200,
                     ),
                   ),
-                  Positioned(top: 10,
+                  Positioned(
+                    top: 10,
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.blue,
@@ -239,8 +248,77 @@ class _birState extends State<bir> {
                       height: 200,
                     ),
                   ),
-                  Positioned(top: 25,
-                    child: Container(child: Text("Get Special Discount"),
+                  Positioned(
+                    top: 25,
+                    child: Container(
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 25,
+                                  left: 15,
+                                ),
+                                child: Text(
+                                  "Get Special Discount",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 15,
+                                  top: 20,
+                                ),
+                                child: Text(
+                                  "Up to 40 %",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 100),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      child: Center(
+                                        child: Text(
+                                          "Start now",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w900,
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(30),
+                                        ),
+                                      ),
+                                      width: 150,
+                                      height: 40,
+                                    ),
+                                    Container(
+                                      width: 50,
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(20),
+                                        ),
+                                      ),
+                                      child: Icon(Icons.open_in_new),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -248,8 +326,63 @@ class _birState extends State<bir> {
                       width: 400,
                       height: 250,
                     ),
-                  )
+                  ),
                 ],
+              ),
+            ),
+            SizedBox(height: 10),
+
+            Center(
+              child: Container(
+                child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      width: 50,
+                      height: 50,
+
+                      child: Icon(Icons.home),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      width: 50,
+                      height: 50,
+
+                      child: Icon(Icons.store),
+                    ),
+                  Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      width: 50,
+                      height: 50,
+
+                      child: Icon(Icons.camera_alt),
+                    ), 
+                 Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      width: 50,
+                      height: 50,
+
+                      child: Icon(Icons.person),
+                    ),   ]
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                ),
+                width: 300,
+                height: 80,
               ),
             ),
           ],
